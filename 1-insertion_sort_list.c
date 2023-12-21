@@ -7,7 +7,7 @@
  * Return: pointer to a element (actual)
  */
 
-listint_t *swap(listint_t *a, listint_t *b)
+void *swap(listint_t *a, listint_t *b)
 {
 	if (a->prev)
 		(a->prev)->next = b;
