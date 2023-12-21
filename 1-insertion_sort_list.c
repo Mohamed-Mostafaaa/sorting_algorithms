@@ -4,19 +4,23 @@
  * swap - swap to doubly linked list elements
  * @a: left element
  * @b: right element
+ * @list: all doubly linked list
  * Return: pointer to a element (actual)
  */
 
-void *swap(listint_t *a, listint_t *b)
+listint_t *swap(listint_t *a, listint_t *b, listint_t **list)
 {
 	if (a->prev)
 		(a->prev)->next = b;
+	else
+		*list = b, b->prev = NULL;
 	if ((b->next))
 		(b->next)->prev = a;
-	a->next = b->next;
 	b->prev = a->prev;
 	a->prev = b;
+	a->next = b->next;
 	b->next = a;
+	return (a);
 }
 
 /**
@@ -26,7 +30,8 @@ void *swap(listint_t *a, listint_t *b)
 
 void insertion_sort_list(listint_t **list)
 {
-	listint_t *actual, *ba;
+	listint_t *actual;
+	listint_t *pr, *ba;
 
 	if (!list || !(*list) || !(*list)->next)
 		return;
@@ -34,19 +39,17 @@ void insertion_sort_list(listint_t **list)
 	actual = (*list)->next;
 	while (actual)
 	{
+		pr = actual->prev;
 		ba = actual;
-		actual = actual->next;
-		while (ba->prev && ba)
+		while (ba->prev && ba->n < pr->n)
 		{
-			if (ba->n < ba->prev->n)
-			{
-				swap(ba->prev, ba);
-				if (!ba->prev)
-					*list = ba;
-				print_list((const listint_t *)*list);
-			}
-			else
-				ba = ba->prev;
+			actual = swap(pr, ba, list);
+			print_list(*list);
+			if (!ba->prev)
+				break;
+			pr = ba->prev;
 		}
+		actual = actual->next;
+		pr = pr->next;
 	}
 }
