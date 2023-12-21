@@ -13,9 +13,9 @@ listint_t *swap(listint_t *a, listint_t *b)
 		(a->prev)->next = b;
 	if ((b->next))
 		(b->next)->prev = a;
+	a->next = b->next;
 	b->prev = a->prev;
 	a->prev = b;
-	a->next = b->next;
 	b->next = a;
 }
 
