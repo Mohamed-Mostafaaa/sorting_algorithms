@@ -43,7 +43,7 @@ void insertion_sort_list(listint_t **list)
 				swap(ba->prev, ba);
 				if (!ba->prev)
 					*list = ba;
-				print_list(*list);
+				print_list((const listint_t *)*list);
 			}
 			else
 				ba = ba->prev;
