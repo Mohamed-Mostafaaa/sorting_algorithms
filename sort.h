@@ -29,6 +29,9 @@ void quick_sort(int *array, size_t size);
 void shell_sort(int *array, size_t size);
 void cocktail_sort_list(listint_t **list);
 void counting_sort(int *array, size_t size);
+void merge_sub(int *sub, int *buff, size_t fr, size_t mid,
+			   size_t ba);
+void merge_recur(int *sub, int *buff, size_t fr, size_t ba);
 void merge_sort(int *array, size_t size);
 void heap_sort(int *array, size_t size);
 void radix_sort(int *array, size_t size);
