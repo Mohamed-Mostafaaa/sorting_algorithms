@@ -42,7 +42,7 @@ void merge_recur(int *sub, int *buff, size_t fr, size_t ba);
 void merge_sort(int *array, size_t size);
 
 void swa_i(int *int1, int *int2);
-void max_heapify(int *arr, size_t len, size_t base, size_t root);
+void max_heap(int *arr, size_t len, size_t base, size_t root);
 void heap_sort(int *array, size_t size);
 
 void radix_sort(int *array, size_t size);
