@@ -51,17 +51,13 @@ void counting_sort(int *array, size_t size)
 	}
 
 	for (i = 0; i < (maxx + 1); i++)
-	{
 		co[i] = 0;
-	}
 	for (i = 0; i < (int)size; i++)
 	{
 		co[array[i]] += 1;
 	}
 	for (i = 0; i < (maxx + 1); i++)
-	{
 		co[i] += co[i - 1];
-	}
 	print_array(co, maxx + 1);
 
 	for (i = 0; i < (int)size; i++)
