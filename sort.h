@@ -45,6 +45,8 @@ void swa_i(int *int1, int *int2);
 void max_heap(int *arr, size_t len, size_t base, size_t root);
 void heap_sort(int *array, size_t size);
 
+int mmax(int *arr, int size);
+void radix_sort_count(int *arr, size_t size, int sig, int *buff);
 void radix_sort(int *array, size_t size);
 
 void bitonic_sort(int *array, size_t size);
