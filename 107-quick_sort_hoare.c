@@ -1,6 +1,21 @@
 #include "sort.h"
 
 /**
+ * swa_i - Swap two integers in an arr.
+ * @int1: The first integer to swap.
+ * @int2: The second integer to swap.
+ */
+
+void swa_i(int *int1, int *int2)
+{
+	int tmp;
+
+	tmp = *int1;
+	*int1 = *int2;
+	*int2 = tmp;
+}
+
+/**
  * hoare_part - Order a subset of an array of integers
  *                   according to the hoare partition scheme.
  * @arr: The array of integers.
