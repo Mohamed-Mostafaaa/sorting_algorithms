@@ -51,6 +51,8 @@ void radix_sort(int *array, size_t size);
 
 void bitonic_sort(int *array, size_t size);
 
+int hoare_part(int *arr, size_t size, int lt, int rt);
+void hoare_sort(int *arr, size_t size, int lt, int rt);
 void quick_sort_hoare(int *array, size_t size);
 
 #endif /*SORT_H*/
