@@ -21,12 +21,10 @@ int hoare_part(int *arr, size_t size, int lt, int rt)
 	pivot = arr[rt];
 	for (abo = lt - 1, bel = rt + 1; abo < bel;)
 	{
-		do
-		{
+		do {
 			abo++;
 		} while (arr[abo] < pivot);
-		do
-		{
+		do {
 			bel--;
 		} while (arr[bel] > pivot);
 
